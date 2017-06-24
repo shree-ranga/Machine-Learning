@@ -32,6 +32,7 @@ def sgd(X, y, epochs, l_rate):
 			beta[0] = beta[0] + l_rate * error * y_hat * (1 - y_hat)
 			for k in xrange(X.shape[1]):
 				beta[k+1] = beta[k+1] + l_rate * error * y_hat * (1 - y_hat) * X[j][k]
+		print('>epoch=%d, lrate=%.3f, error=%.3f' % (epoch, l_rate, sum_error))
 	return beta
 
 # Logistic Regression
@@ -72,6 +73,3 @@ print(l_r)
 
 # model = LogisticRegression()
 # model.fit(X,y)
-
-
-
