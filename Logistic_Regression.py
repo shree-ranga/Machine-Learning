@@ -1,4 +1,8 @@
 
+"""
+Logistic Regression for binary classification
+Author: Shree Ranga Raju
+"""
 import numpy as np
 # from sklearn.linear_model import LogisticRegression
 
