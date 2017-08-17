@@ -7,6 +7,7 @@ class GradientDescent():
     pass
 
 class Adam():
+<<<<<<< HEAD
     def __init__(self, learning_rate=0.001, b1=0.9, b2=0.999):
         self.learning_rate = learning_rate
         self.eps = 1e-8
@@ -32,3 +33,6 @@ class Adam():
         self.w_updt = self.learning_rate / (np.sqrt(v_hat) + self.eps) * m_hat
 
         return w - self.w_updt
+=======
+    pass
+>>>>>>> b79e0303720af6fbe8fba83b23f8b83005cd92e0
