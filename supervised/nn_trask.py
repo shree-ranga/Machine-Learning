@@ -12,6 +12,7 @@ def nonlin(x, deriv=False):
         return x*(1-x)
     return 1/(1+np.exp(-1*x))
 
+# Part - 1
 # input data set
 X = np.array([ [0,0,1],
                 [0,1,1],
@@ -23,13 +24,14 @@ y  = np.array([[0,0,1,1]]).T
 
 np.random.seed(888)
 
-# initialize weights randomly with zero mean
-# draw random samples from Unif[-1,1)
+# # initialize weights randomly with zero mean
+# # draw random samples from Unif[-1,1)
 syn0 = 2 * np.random.random((3,1)) - 1
+syn0 = np.array([[0.1, 0.4, 0.8]]).T
 print "Intial weights"
 print syn0
 
-for i in xrange(10000):
+for i in xrange(10):
 
     #forward propogation
     l0 = X
@@ -40,13 +42,14 @@ for i in xrange(10000):
     # print "error after iteration ", i
     # print l1_error
 
-    # weighted error
+    # weighted error derivative
+    # secret sauce
     l1_delta = l1_error * nonlin(l1, True)
 
     #update weights
     syn0 += np.dot(l0.T, l1_delta)
-    # print "Syn0 after itertaion ", i
-    # print syn0
+    print "Syn0 after itertaion ", i
+    print syn0
 
 print "Final Weights"
 print syn0
