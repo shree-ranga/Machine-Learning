@@ -1,2 +1,5 @@
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
+/supervised/.ipynb_checkpoints
+/supervised/iris.csv
+/unsupervised/plot_kmeans_sillhouette_analysis.ipynb

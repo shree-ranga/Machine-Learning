@@ -7,6 +7,7 @@ Wikipedia example
 from __future__ import division
 import numpy as np
 
+
 # one dimension function x^4 - 3x^3 + 2
 def f_x(x):
     return x**4 - 3 * x**3 + 2
@@ -19,15 +20,15 @@ def df(x):
 if __name__ == '__main__':
 
     # Generate data
-    x = np.arange(-10,11)
+    x = np.arange(-10, 11)
     y = []
     for i in x:
         y.append(f_x(i))
 
     # GD hyperparameters
-    gamma = 0.01 # step size multiplier
-    init_x = 6 # randomly chosen x value for function/ x_0
-    precision = 0.00001
+    gamma = 0.01  # step size multiplier
+    init_x = 6  # randomly chosen x value for function/ x_0
+    precision = 0.000001
     prev_step_size = init_x
     # max number of iterations maybe?
     max_iter = 100
@@ -37,8 +38,7 @@ if __name__ == '__main__':
         print init_x
         last_x = init_x
         init_x += -gamma * df(last_x)
-        prev_step_size = abs (init_x - last_x)
+        prev_step_size = abs(init_x - last_x)
         count += 1
 
     print "The local minima occurs at {}".format(init_x)
-
